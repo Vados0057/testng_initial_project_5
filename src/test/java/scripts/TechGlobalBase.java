@@ -12,7 +12,7 @@ public class TechGlobalBase {
     TechGlobalBasePage techGlobalBasePage;
     TechGlobalFrontendTestingHomePage techGlobalFrontendTestingHomePage;
     TechGlobalLoginFormPage techGlobalLoginFormPage;
-    TechGlobalForgotPasswordTest techGlobalForgotPasswordTest;
+
     @BeforeMethod
     public void setup() {
         driver = Driver.getDriver();

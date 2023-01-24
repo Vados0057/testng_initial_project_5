@@ -3,9 +3,9 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TechGlobalLoginFormPage extends TechGlobalBasePage{
+public class TechGlobalLoginFormPage extends TechGlobalBasePage {
 
-    public TechGlobalLoginFormPage(){
+    public TechGlobalLoginFormPage() {
         super();
     }
 
@@ -36,8 +36,25 @@ public class TechGlobalLoginFormPage extends TechGlobalBasePage{
     @FindBy(id = "main_heading")
     public WebElement mainHeading;
 
+    @FindBy(id = "sub_heading")
+    public WebElement resetPasswordHeading;
 
+    @FindBy(xpath = "//input[@id='email']/../label")
+    public WebElement resetPasswordText;
 
+    @FindBy(id = "email")
+    public WebElement emailInput;
+
+    @FindBy(id = "submit")
+    public WebElement submitButton;
+
+    @FindBy(id = "error_message")
+    public WebElement errorMessage;
+
+    public void enterCredentials(String userName, String password) {
+        userNameInput.sendKeys(userName);
+        userPasswordInput.sendKeys(password);
+    }
 
 
 }
