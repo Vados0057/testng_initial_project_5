@@ -12,7 +12,6 @@ public class TechGlobalFrontendTestingHomePage extends TechGlobalBasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //Locate all the unique elements for this page
     @FindBy(css = "div[id^='card']")
     public List<WebElement> cards;
 

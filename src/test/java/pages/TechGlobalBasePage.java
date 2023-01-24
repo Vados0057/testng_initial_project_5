@@ -13,11 +13,6 @@ public class TechGlobalBasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //Common elements from the header and the footer and some other common elements
-
-    @FindBy(id = "logo")
-    public WebElement logo;
-
     @FindBy(id = "dropdown-button")
     public WebElement headerDropdown;
 

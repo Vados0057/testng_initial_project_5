@@ -55,6 +55,4 @@ public class TechGlobalLoginFormPage extends TechGlobalBasePage {
         userNameInput.sendKeys(userName);
         userPasswordInput.sendKeys(password);
     }
-
-
 }
