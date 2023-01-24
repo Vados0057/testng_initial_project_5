@@ -74,7 +74,7 @@ public class TechGlobalLoginFormTest extends TechGlobalBase {
 
     @Test(priority = 2, description = "Validate TechGlobal Login Form card valid login")
     public void validateValidLogin() {
-        techGlobalLoginFormPage.enterCredentials(ConfigReader.getProperty("loginUsername"),ConfigReader.getProperty("loginPassword"));
+        techGlobalLoginFormPage.enterCredentials(ConfigReader.getProperty("loginUsername"), ConfigReader.getProperty("loginPassword"));
         techGlobalLoginFormPage.loginButton.click();
 
         Assert.assertTrue(techGlobalLoginFormPage.loggedInMessage.isDisplayed());
@@ -98,7 +98,7 @@ public class TechGlobalLoginFormTest extends TechGlobalBase {
     @Test(priority = 3, description = "Validate TechGlobal Login Form card valid login and then logout")
     public void validateValidLoginAndThenLogout() {
 
-        techGlobalLoginFormPage.enterCredentials(ConfigReader.getProperty("loginUsername"),ConfigReader.getProperty("loginPassword"));
+        techGlobalLoginFormPage.enterCredentials(ConfigReader.getProperty("loginUsername"), ConfigReader.getProperty("loginPassword"));
         techGlobalLoginFormPage.loginButton.click();
 
         techGlobalLoginFormPage.logoutButton.click();
@@ -119,7 +119,8 @@ public class TechGlobalLoginFormTest extends TechGlobalBase {
         And user should see “SUBMIT” button
          */
 
-    @Test(priority = 4)
+    @Test(priority = 4, description = "Validate TechGlobal Login Form card Forgot Password? " +
+            "Link and Reset Password page")
     public void validateForgotPasswordLinkAndResetPasswordPage() {
         techGlobalLoginFormPage.forgotPasswordOption.click();
         Assert.assertTrue(techGlobalLoginFormPage.resetPasswordHeading.isDisplayed());
@@ -143,7 +144,7 @@ public class TechGlobalLoginFormTest extends TechGlobalBase {
     address.” message
      */
 
-    @Test(priority = 5)
+    @Test(priority = 5, description = "Validate TechGlobal Login Form card Reset Password link")
     public void validateResetPasswordLink() {
         techGlobalLoginFormPage.forgotPasswordOption.click();
         Assert.assertTrue(techGlobalLoginFormPage.resetPasswordHeading.isDisplayed());
@@ -166,7 +167,8 @@ public class TechGlobalLoginFormTest extends TechGlobalBase {
     Then user should see “Invalid Username entered!” message
      */
 
-    @Test(priority = 6)
+    @Test(priority = 6, description = "Validate TechGlobal Login Form card invalid login with\n" +
+            "wrong username")
     public void validateInvalidLoginWithWrongUsername() {
         techGlobalLoginFormPage.enterCredentials(ConfigReader.getProperty("userName1"),
                 ConfigReader.getProperty("loginPassword"));
@@ -187,7 +189,8 @@ public class TechGlobalLoginFormTest extends TechGlobalBase {
     Then user should see “Invalid Password entered!” message
      */
 
-    @Test(priority = 7)
+    @Test(priority = 7, description = "Validate TechGlobal Login Form card invalid login with\n" +
+            "wrong password")
     public void validateInvalidLoginWithWrongPassword() {
         techGlobalLoginFormPage.enterCredentials(ConfigReader.getProperty("loginUsername"),
                 ConfigReader.getProperty("wrongPassword"));
@@ -208,7 +211,8 @@ public class TechGlobalLoginFormTest extends TechGlobalBase {
         Then user should see “Invalid Username entered!” message
              */
 
-    @Test(priority = 8)
+    @Test(priority = 8, description = "Validate TechGlobal Login Form card invalid login with\n" +
+            "both wrong credentials")
     public void validateInvalidLoginWithBothWrongCredentials() {
         techGlobalLoginFormPage.enterCredentials(ConfigReader.getProperty("userName1"),
                 ConfigReader.getProperty("wrongPassword"));
